@@ -2,7 +2,7 @@
 
 ## Method look-up overhaed
 
-Based on https://docs.python.org/release/2.6.6/faq/programming.html#my-program-is-too-slow-how-do-i-speed-it-up
+Based on https://docs.python.org/release/2.6.6/faq/programming.html#my-program-is-too-slow-how-do-i-speed-it-up  
 **Python 2**
 ```
 $ ipython
@@ -64,3 +64,32 @@ In [8]: timeit(stmt2, setup2, number=1000)
 Out[8]: 85.85463693700058
 ```
 
+## "Classic" division
+
+Based on https://docs.python.org/release/2.6.6/faq/programming.html#why-does-22-10-return-3
+
+```
+$ ipython
+Python 2.7.12 (default, Sep 11 2016, 21:48:40) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: 10 / 3
+Out[1]: 3
+
+In [2]: 10 // 3
+Out[2]: 3
+
+In [3]: from __future__ import division
+
+In [4]: 10 / 3
+Out[4]: 3.3333333333333335
+
+In [5]: 10 // 3
+Out[5]: 3
+```
